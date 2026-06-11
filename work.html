@@ -26,18 +26,31 @@
     </div>
 
     <div class="content-container">
-        
         <div class="work-header">
-            <h1 class="section-title">Featured Projects</h1>
-            <p class="section-subtitle">My collection of full-stack applications and predictive data models.</p>
+            <h1 class="section-title">Featured Projects Hub</h1>
+            <p class="section-subtitle">A curated collection of production web applications and predictive data architectures.</p>
         </div>
 
         <div class="projects-grid">
             <div class="project-card">
+                <img src="logo.jpeg" alt="ADD-A-LOOK Dreadlock Parlour Platform" loading="lazy">
+                <h3>ADD-A-LOOK Platform</h3>
+                <p><strong>The Problem:</strong> Small local businesses often lose customers or spend hours answering messages because their price lists are just static images or plain text pinned on WhatsApp.</p>
+                <p><strong>The Solution:</strong> I built an interactive digital catalog and lookbook where customers can browse real service pictures via an image slider and immediately click to send an automated, pre-filled booking request straight to the salon's WhatsApp line.</p>
+                <div class="tech-tags">
+                    <span>React.js</span> <span>Tailwind CSS</span> <span>Vite</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://add-a-look-salon.netlify.app/" target="_blank" class="btn btn-branding">Live App</a>
+                    <a href="https://github.com/Wallflower65/add-a-look-salon" target="_blank" class="btn btn-outline">Source Code</a>
+                </div>
+            </div>
+
+            <div class="project-card">
                 <img src="pictures/clinic-wait.png" alt="ER Clinic AI Optimizer Dashboard" loading="lazy">
                 <h3>ER Clinic AI Optimizer</h3>
-                <p><strong>The Problem:</strong> Unpredictable ER wait times cause patient frustration and inefficient staff allocation.</p>
-                <p><strong>The Solution:</strong> Engineered a Random Forest machine learning model to predict wait times within 1.17 minutes of accuracy, deployed via a live Streamlit dashboard for real-time triage assistance.</p>
+                <p><strong>The Problem:</strong> Emergency room waiting times are highly unpredictable, which leads to patient frustration and makes it difficult for clinics to manage their staff smoothly.</p>
+                <p><strong>The Solution:</strong> Developed an intelligent data model that analyzes clinic patterns to accurately predict emergency room wait times, showing the live estimates on a simple, interactive dashboard to help clinics manage incoming patients better.</p>
                 <div class="tech-tags">
                     <span>Python</span> <span>Scikit-Learn</span> <span>Streamlit</span>
                 </div>
@@ -50,8 +63,8 @@
             <div class="project-card">
                 <img src="pictures/hamba.png" alt="Cape Town Commuter Map" loading="lazy">
                 <h3>Commuter Route Engine</h3>
-                <p><strong>The Problem:</strong> Navigating complex urban environments requires accurate, real-time spatial data routing.</p>
-                <p><strong>The Solution:</strong> Built an interactive mapping engine integrating Nominatim and OSRM REST APIs to calculate optimal driving routes, distances, and travel times across South Africa.</p>
+                <p><strong>The Problem:</strong> Navigating busy city streets or planning daily travel requires accurate, reliable distance and time tracking.</p>
+                <p><strong>The Solution:</strong> I created an interactive live map application that instantly calculates the best driving paths, total distances, and travel times across South Africa to make commuting simpler.</p>
                 <div class="tech-tags">
                     <span>JavaScript (ES6+)</span> <span>REST APIs</span> <span>Leaflet.js</span>
                 </div>
@@ -64,8 +77,8 @@
             <div class="project-card">
                 <img src="pictures/mzansi-med-ward.png" alt="Mzansi Med-Ward EHR" loading="lazy">
                 <h3>Mzansi Med-Ward EHR</h3>
-                <p><strong>The Problem:</strong> Clunky Electronic Health Records (EHRs) cause administrative burnout and cognitive overload for frontline healthcare workers.</p>
-                <p><strong>The Solution:</strong> Designed a responsive, state-managed React prototype with role-based access and an intuitive e-MAR to streamline clinical workflows and patient care.</p>
+                <p><strong>The Problem:</strong> Complicated computer systems in hospitals take too much time to navigate, causing administrative burnout and distracting nurses and doctors from patient care.</p>
+                <p><strong>The Solution:</strong> I designed a clean, easy-to-use digital health dashboard prototype that organizes patient timelines and tracking sheets logically, helping frontline healthcare workers find critical patient info instantly without feeling overwhelmed.</p>
                 <div class="tech-tags">
                     <span>React.js</span> <span>Tailwind CSS</span> <span>State Management</span>
                 </div>
@@ -78,8 +91,8 @@
             <div class="project-card">
                 <img src="pictures/air-quality.png" alt="Air Quality Dashboard" loading="lazy">
                 <h3>Global Air Quality Monitor</h3>
-                <p><strong>The Problem:</strong> Accessing real-time, localized environmental health hazard data is often fragmented and hard to read.</p>
-                <p><strong>The Solution:</strong> Developed a dynamic dashboard that consumes live APIs to fetch, process, and visualize real-time air quality indices and weather conditions globally.</p>
+                <p><strong>The Problem:</strong> Finding clear, real-time information about environmental health factors like air pollution in your specific area can be difficult and confusing.</p>
+                <p><strong>The Solution:</strong> Built a straightforward environmental dashboard that pulls live hazard data from global weather networks and displays it in an easy-to-read layout, keeping communities informed about their local air quality.</p>
                 <div class="tech-tags">
                     <span>JavaScript</span> <span>REST APIs</span> <span>CSS Grid</span>
                 </div>
@@ -109,10 +122,9 @@
               <a href="https://github.com/Wallflower65" target="_blank" title="GitHub Profile"><i class="fab fa-github"></i></a>
               <a href="https://www.linkedin.com/in/phaphamani-zoneleni-28181a20b" target="_blank" title="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
             </div>
-            <p class="text-center mt-5">
-              ✌️ This website was coded by Phaphamani Zoneleni, and is
-              <a href="https://github.com/Wallflower65/portfolio-project" target="_blank">open-sourced</a>
-            </p>
+            <div class="text-center mt-5 pt-4 border-top border-light text-muted small tracking-widest text-uppercase">
+              © <script>document.write(new Date().getFullYear())</script> PHAPHAMANI ZONELENI. ALL RIGHTS RESERVED.
+            </div>
         </footer>
     </div>
 </body>

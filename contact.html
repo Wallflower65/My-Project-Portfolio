@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Contact Phaphamani. Phaphamani is a front-end developer based in South Africa. "
+      content="Contact Phaphamani. Phaphamani is a software and data engineer based in South Africa."
     />
     <title>Contact - Phaphamani Zoneleni</title>
 
@@ -38,16 +38,16 @@
       <nav class="d-flex justify-content-between">
         <ul>
           <li>
-            <a href="/" title="Homepage"> Home</a>
+            <a href="/" title="Homepage">Home</a>
           </li>
           <li>
-            <a href="/about.html" title="About Phaphamani"> About</a>
+            <a href="/about.html" title="About Phaphamani">About</a>
           </li>
           <li>
-            <a href="/work.html" title="Phaphamani's work"> Work</a>
+            <a href="/work.html" title="Phaphamani's work">Work</a>
           </li>
           <li class="active">
-            <a href="/contact.html" title="Contact Phaphamani"> Contact</a>
+            <a href="/contact.html" title="Contact Phaphamani">Contact</a>
           </li>
         </ul>
       </nav>
@@ -55,7 +55,7 @@
     
     <div class="content-container container">
       <div class="content row">
-        <div class="col-lg-6 mb-5">
+        <div class="col-lg-6 mb-5 animate-on-scroll delay-1">
           <h1 class="mb-4">Let's get in touch!</h1>
           
           <h3 class="fs-5 mt-4">Email</h3>
@@ -67,9 +67,8 @@
           
           <h3 class="fs-5 mt-4">Resume</h3>
           <p>
-
             <a href="https://drive.google.com/file/d/16wgZBKZ1GkAalLVQxQWDn0lgtx8JETcy/view?usp=sharing" target="_blank" class="text-decoration-none text-dark">
-📄View My Resume 
+              View My Resume 📄
             </a>
           </p>
 
@@ -80,30 +79,30 @@
           </ul>
         </div>
 
-        <div class="col-lg-6">
+        <div class="col-lg-6 animate-on-scroll delay-2">
           <div class="card shadow-sm border-0 p-4 bg-light">
             <h3 class="mb-4">Send a Message</h3>
             <form action="https://formspree.io/f/mbdawkgl" method="POST">
-  <div class="mb-3">
-    <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name" name="name" required>
-  </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" name="_replyto" required>
-  </div>
-  <div class="mb-3">
-    <label for="message" class="form-label">Message</label>
-    <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
-  </div>
-  <button type="submit" class="btn btn-branding w-100">Submit</button>
-</form>
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="email" name="_replyto" required>
+              </div>
+              <div class="mb-3">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-branding w-100">Submit</button>
+            </form>
           </div>
         </div>
       </div>
     </div>
     
-    <footer class="container">
+    <footer class="container animate-on-scroll delay-3">
       <div class="d-flex justify-content-center mb-5">
         <a
           href="mailto:phaphamanizoneleni@gmail.com"
@@ -129,9 +128,28 @@
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
-     <div class="text-center mt-5 pt-4 border-top border-light text-muted small tracking-widest text-uppercase">
+      <div class="text-center mt-5 pt-4 border-top border-light text-muted small tracking-widest text-uppercase">
           © <script>document.write(new Date().getFullYear())</script> PHAPHAMANI ZONELENI. ALL RIGHTS RESERVED.
-        </div>
+      </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, threshold: 0.12, rootMargin: "0px 0px -20px 0px" };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            const targets = document.querySelectorAll('.animate-on-scroll');
+            targets.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
   </body>
 </html>

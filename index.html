@@ -52,7 +52,9 @@
         </ul>
       </nav>
     </div>
-    <div class="hero">
+
+    <!-- Hero Section -->
+    <div class="hero animate-on-scroll delay-1">
       <p>👋 Hello, I'm</p>
       <h1>Phaphamani Zoneleni</h1>
       <h2 class="mb-3">Full-Stack Software & Data Engineer</h2>
@@ -61,10 +63,12 @@
         <a href="/contact.html" class="btn btn-branding" title="Contact me">Contact me</a>
       </div>
     </div>
-    <h2 class="text-center m-5">Check out some of my featured projects below</h2>
-    <div class="container">
 
-      <div class="row mb-5 align-items-center">
+    <h2 class="text-center m-5 animate-on-scroll delay-2">Check out some of my featured projects below</h2>
+    
+    <div class="container">
+      <!-- Project 1: Mzansi Med-Ward -->
+      <div class="row mb-5 align-items-center animate-on-scroll delay-3">
         <div class="col d-none d-lg-block">
           <img
             src="pictures/mzansi-med-ward.png"
@@ -74,40 +78,45 @@
         </div>
         <div class="col">
           <div class="project-desciption">
-            <h2 class="mb-4">Mzansi Med-Ward (EHR)</h2>
+            <h2 class="mb-4">Mzansi Med-Ward (EHR Prototype)</h2>
             <div class="mb-3">
-              <span class="badge rounded-pill bg-secondary">React</span>
-              <span class="badge rounded-pill bg-secondary">Tailwind CSS</span>
+              <span class="badge rounded-pill bg-dark">React.js</span>
+              <span class="badge rounded-pill bg-dark">Tailwind CSS</span>
             </div>
             <p class="mb-4 text-muted">
-              A state-managed Electronic Health Record (EHR) prototype designed to reduce cognitive load and administrative burnout for frontline healthcare workers. Features role-based access, automated clinical timelines, and an interactive e-MAR.
+              <strong>The Problem:</strong> Most hospital computer systems are incredibly clunky and frustrating to navigate, which wastes precious time and causes massive burnout for nurses and doctors.
+            </p>
+            <p class="mb-4 text-muted">
+              <strong>The Solution:</strong> Using insights from my actual healthcare training, I designed a clean, simple medical dashboard. I built it so that patient timelines and medication charts stay perfectly updated in the background, helping frontline workers find critical information instantly without feeling overwhelmed.
             </p>
             <a href="/work.html" class="btn btn-branding-outline">
-              See all projects
+              See how it works
             </a>
           </div>
         </div>
       </div>
 
-      <div class="row mb-5 align-items-center">
+      <!-- Project 2: ER Clinic AI Optimizer -->
+      <div class="row mb-5 align-items-center animate-on-scroll" style="animation-delay: 0.4s;">
         <div class="col">
           <div class="project-desciption">
             <h2 class="mb-4">ER Clinic AI Optimizer</h2>
             <div class="mb-3">
-              <span class="badge rounded-pill bg-secondary">Python</span>
-              <span class="badge rounded-pill bg-secondary">Machine Learning</span>
-              <span class="badge rounded-pill bg-secondary">Streamlit</span>
+              <span class="badge rounded-pill bg-dark">Python</span>
+              <span class="badge rounded-pill bg-dark">Machine Learning</span>
             </div>
             <p class="mb-4 text-muted">
-              A predictive Machine Learning model (Random Forest Regressor) built to estimate patient wait times in an emergency room environment. Achieved prediction accuracy within 1.17 minutes, deployed via an interactive Streamlit dashboard.
+              <strong>The Problem:</strong> Emergency room waiting times are incredibly unpredictable, which makes patients anxious and makes it super difficult for clinics to manage their staff schedules.
+            </p>
+            <p class="mb-4 text-muted">
+              <strong>The Solution:</strong> I built a smart data tool that studies past clinic patterns to figure out exactly how long the wait times will be. It drops those predictions onto a straightforward, interactive dashboard so clinics can see what's coming and manage patient flows better.
             </p>
             <a href="/work.html" class="btn btn-branding-outline">
-              See all projects
+              See how it works
             </a>
           </div>
         </div>
         <div class="col d-none d-lg-block">
-
           <img
             src="pictures/clinic-wait.png" 
             class="img-fluid rounded shadow-sm border"
@@ -116,7 +125,8 @@
         </div>
       </div>
       
-      <footer>
+      <!-- Footer -->
+      <footer class="animate-on-scroll" style="animation-delay: 0.5s;">
         <div class="contact-box justify-content-between mb-5 d-none d-md-flex">
           <div>
             <h3>Work Inquiry</h3>
@@ -162,5 +172,31 @@
         </div>
       </footer>
     </div>
+
+    <!-- Script to handle dynamic entry animation tracking -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                threshold: 0.12, 
+                rootMargin: "0px 0px -20px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const targets = document.querySelectorAll('.animate-on-scroll');
+            targets.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
   </body>
 </html>

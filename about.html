@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="styles/portfolio.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/ddc3ee268a.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     <div class="container"> 
@@ -24,34 +25,50 @@
       </nav> 
     </div>
 
-    <div class="content-container">
-        <div class="hero-grid">
-            <div class="hero-text">
-                <h1 class="hero-title">Phaphamani</h1>
-                <h2 class="hero-subtitle">Software & Data Engineer based in South Africa</h2>
-                <p>
-                    I am a Software & Data Engineer focused on creating clean, functional web applications and data solutions. By combining systemic backend modeling with responsive frontend presentation layer design, I build straightforward tools that optimize workflows and address operational requirements.
-                </p>
-                <div class="fun-fact">
-                    <h3>Background Highlight</h3>
-                    <p>
-                        Transitioning from an extensive background as a professional nurse, I systematically port strong analytical critical thinking, structured diagnostic problem-solving skills, and deep attention to detail into engineering pristine software architectures.
-                    </p>
-                </div>
-            </div>
+    <div class="content-container container">
+     
+        <div class="text-center mt-4 mb-2 animate-on-scroll delay-1">
+            <img src="pictures/phaphamani_headshot.jpg" 
+                 alt="Phaphamani Zoneleni" 
+                 class="about-image-circle">
+        </div>
 
-            <div class="hero-image-container">
-                <img src="pictures/phaphamani_headshot.jpg" 
-                     alt="Phaphamani Zoneleni - Software & Data Engineer" 
-                     class="hero-image" 
-                     width="400" 
-                     height="400" 
-                     loading="lazy">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 text-center mb-5 animate-on-scroll delay-2">
+                <h1 class="hero-title mb-2">Phaphamani</h1>
+                <h2 class="hero-subtitle mb-4">Software & Data Engineer based in South Africa</h2>
+                
+                <p class="fs-5 text-secondary mx-auto" style="max-width: 760px; line-height: 1.7;">
+                    I am a software and data engineer who loves building clean, helpful web apps and working with data to find practical solutions. I enjoy taking complex ideas and turning them into easy-to-use tools that make everyday tasks and business workflows run a whole lot smoother.
+                </p>
+                <p class="fs-5 text-secondary mx-auto mt-3" style="max-width: 760px; line-height: 1.7;">
+                    For me, coding isn't just about writing syntax, it's about understanding what people actually need and designing software that makes sense when they use it. I thrive on collaborating, continuous learning, and creating technology that makes a positive difference.
+                </p>
             </div>
         </div>
 
-        <div class="stack-section">
-            <h2 class="section-title">Technical Toolkit</h2>
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 space-y-4">
+
+                <div class="fun-fact p-4 bg-light rounded shadow-sm mb-4 animate-on-scroll delay-3">
+                    <h3 class="fs-4 mb-2">💡 Fun fact</h3>
+                    <p class="mb-0 text-muted">
+                        I am currently pursuing my degree in the healthcare space. Turns out, diagnosing a tricky bug in a messy codebase and deciphering intense clinical charts require the exact same superpower! Both take serious patience, sharp intuition, and a refusal to give up until it's sorted out.
+                    </p>
+                </div>
+
+                <div class="fun-fact p-4 bg-light rounded shadow-sm mb-5 animate-on-scroll" style="animation-delay: 0.4s;">
+                    <h3>Background Highlight</h3>
+                    <p class="mb-0 text-muted">
+                        Bringing insights from my training in nursing and midwifery, I offer a unique perspective to software engineering teams. Managing clinical settings has trained me to think clearly under intense pressure, break down complicated conditions systematically, and keep an absolute focus on the real people using the applications I design.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+        <div class="stack-section pt-5 border-top animate-on-scroll" style="animation-delay: 0.5s;">
+            <h2 class="section-title text-center mb-5">Technical Toolkit</h2>
             <div class="toolkit-grid">
                 <div class="toolkit-group">
                     <h3>Core Programming & Data Science</h3>
@@ -92,7 +109,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container mt-5">
       <footer>
         <div class="contact-box justify-content-between mb-5 d-none d-md-flex">
           <div>
@@ -115,5 +132,30 @@
         </div>
       </footer>
     </div>
-  </body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                threshold: 0.12, 
+                rootMargin: "0px 0px -20px 0px"
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const targets = document.querySelectorAll('.animate-on-scroll');
+            targets.forEach(el => {
+                el.style.animationPlayState = 'paused';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
 </html>
